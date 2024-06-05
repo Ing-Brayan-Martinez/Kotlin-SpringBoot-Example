@@ -8,9 +8,9 @@ plugins {
 group = "com.example.discovery"
 version = "0.0.1-SNAPSHOT"
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+configurations {
+	compileOnly {
+		extendsFrom(configurations.annotationProcessor.get())
 	}
 }
 
@@ -18,11 +18,18 @@ repositories {
 	mavenCentral()
 }
 
-extra["springCloudVersion"] = "2023.0.2"
+ext {
+	set("springCloudVersion", "2023.0.2")
+}
 
 dependencies {
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	//spring cloud
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-server")
+
+	//spring kotlin
+	implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+	//spring test
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
@@ -31,6 +38,12 @@ dependencies {
 dependencyManagement {
 	imports {
 		mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+	}
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
 
