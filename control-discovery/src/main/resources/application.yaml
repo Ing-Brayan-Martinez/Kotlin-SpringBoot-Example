@@ -1,0 +1,25 @@
+server:
+  port: 8761
+
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        security: DEBUG
+    reactor:
+      netty:
+        channel: DEBUG
+
+
+spring:
+  application:
+    name: control-discovery
+
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  renewalPercentThreshold: 0.85
