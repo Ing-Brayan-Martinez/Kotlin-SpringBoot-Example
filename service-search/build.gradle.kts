@@ -32,6 +32,9 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 
+	//spring data
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
 	//spring security
 	//implementation("org.springframework.boot:spring-boot-starter-security")
 
@@ -47,6 +50,7 @@ dependencies {
 
 	//spring test
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.springframework.boot:spring-boot-starter-data-test")
 	testImplementation("io.projectreactor:reactor-test")
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
@@ -60,6 +64,9 @@ dependencies {
 
 	//swagger
 	implementation("io.springfox:springfox-boot-starter:3.0.0")
+
+	//postgresql
+	implementation("org.postgresql:postgresql:42.7.3")
 }
 
 dependencyManagement {

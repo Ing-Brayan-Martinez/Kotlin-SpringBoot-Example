@@ -12,14 +12,14 @@ spring:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         enable_lazy_load_no_trans: true
         temp:
           use_jdbc_metadata_defaults: false
-    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
 
   datasource:
     platform: postgres
-    url: jdbc:postgresql://localhost:5432/ECommerce
+    url: jdbc:postgresql://localhost:5432/e-commerce
     username: postgres
     password: postgres
     driverClassName: org.postgresql.Driver
