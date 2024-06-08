@@ -33,7 +33,7 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 
 	//spring data
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
 
 	//spring security
 	//implementation("org.springframework.boot:spring-boot-starter-security")
@@ -66,7 +66,8 @@ dependencies {
 	implementation("io.springfox:springfox-boot-starter:3.0.0")
 
 	//postgresql
-	implementation("org.postgresql:postgresql:42.7.3")
+	implementation("org.postgresql:r2dbc-postgresql:1.0.5.RELEASE")
+
 }
 
 dependencyManagement {
