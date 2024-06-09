@@ -55,10 +55,6 @@ dependencies {
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-	//lombok
-	compileOnly("org.projectlombok:lombok")
-	annotationProcessor("org.projectlombok:lombok")
-
 	//jetbrains
 	implementation("org.jetbrains:annotations:23.1.0")
 
@@ -67,7 +63,6 @@ dependencies {
 
 	//postgresql
 	implementation("org.postgresql:r2dbc-postgresql:1.0.5.RELEASE")
-
 }
 
 dependencyManagement {
