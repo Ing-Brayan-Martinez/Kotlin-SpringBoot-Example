@@ -38,16 +38,58 @@ spring:
             - Path=/
             - Method=GET
 
-        - id: ping
-          uri: lb://control-identity
-          predicates:
-            - Path=/ping
-            - Method=GET
-
         - id: test
           uri: https://github.com/
           predicates:
             - Path=/test
+            - Method=GET
+
+        # product
+
+        - id: createProduct
+          uri: lb://service-product
+          predicates:
+            - Path=/product
+            - Method=POST
+
+        - id: updateProduct
+          uri: lb://service-product
+          predicates:
+            - Path=/product
+            - Method=PUT
+
+        - id: deleteProduct
+          uri: lb://service-product
+          predicates:
+            - Path=/product
+            - Method=GET
+
+        - id: getProduct
+          uri: lb://service-product
+          predicates:
+            - Path=/product
+            - Method=GET
+
+        - id: getProducts
+          uri: lb://service-product
+          predicates:
+            - Path=/product
+            - Method=GET
+
+        # search
+
+        - id: search
+          uri: lb://service-search
+          predicates:
+            - Path=/search
+            - Method=GET
+
+        # shopping-car
+
+        - id: getShoppingCar
+          uri: lb://service-shopping-car
+          predicates:
+            - Path=/shopping-car
             - Method=GET
 
 
