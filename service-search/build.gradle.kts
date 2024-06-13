@@ -33,7 +33,7 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 
 	//spring data
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
 
 	//spring security
 	//implementation("org.springframework.boot:spring-boot-starter-security")
@@ -55,10 +55,6 @@ dependencies {
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-	//lombok
-	compileOnly("org.projectlombok:lombok")
-	annotationProcessor("org.projectlombok:lombok")
-
 	//jetbrains
 	implementation("org.jetbrains:annotations:23.1.0")
 
@@ -66,7 +62,7 @@ dependencies {
 	implementation("io.springfox:springfox-boot-starter:3.0.0")
 
 	//postgresql
-	implementation("org.postgresql:postgresql:42.7.3")
+	implementation("org.postgresql:r2dbc-postgresql:1.0.5.RELEASE")
 }
 
 dependencyManagement {
