@@ -22,7 +22,7 @@ class ProductServiceImpl(
 
         // Execute algorithm
         return Mono.justOrEmpty(create)
-            .map { productMapper.newProductEntityFromCreateProduct(it) }
+            .map { productMapper.toProductEntity(it) }
             .flatMap { productRepository.save(it) }
     }
 
@@ -34,7 +34,7 @@ class ProductServiceImpl(
 
         // Execute algorithm
         return this.productRepository.findById(update.id)
-            .map { productMapper.newProductEntityFromCreateProduct(update, it) }
+            .map { productMapper.toProductEntity(update, it) }
             .flatMap { productRepository.save(it) }
     }
 

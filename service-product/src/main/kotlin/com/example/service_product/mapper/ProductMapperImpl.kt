@@ -8,7 +8,7 @@ import java.time.LocalDate
 
 @Component
 class ProductMapperImpl : ProductMapper {
-    override fun newProductEntityFromCreateProduct(model: CreateProduct): Product {
+    override fun toProductEntity(model: CreateProduct): Product {
         return Product(
             name = model.name,
             createAt = LocalDate.now(),
@@ -18,7 +18,7 @@ class ProductMapperImpl : ProductMapper {
             stock = model.stock)
     }
 
-    override fun newProductEntityFromCreateProduct(model: UpdateProduct, entity: Product): Product {
+    override fun toProductEntity(model: UpdateProduct, entity: Product): Product {
         return entity.copy(
             name = model.name,
             updateAt = LocalDate.now(),
