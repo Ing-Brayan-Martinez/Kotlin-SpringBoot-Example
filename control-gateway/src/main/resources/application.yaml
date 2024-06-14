@@ -61,19 +61,19 @@ spring:
         - id: deleteProduct
           uri: lb://service-product
           predicates:
-            - Path=/product
-            - Method=GET
-
-        - id: getProduct
-          uri: lb://service-product
-          predicates:
-            - Path=/product
-            - Method=GET
+            - Path=/product/{id}
+            - Method=DELETE
 
         - id: getProducts
           uri: lb://service-product
           predicates:
             - Path=/product
+            - Method=GET
+
+        - id: getProductByID
+          uri: lb://service-product
+          predicates:
+            - Path=/product/{id}
             - Method=GET
 
         # search
