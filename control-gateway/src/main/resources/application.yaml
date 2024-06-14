@@ -81,7 +81,7 @@ spring:
         - id: search
           uri: lb://service-search
           predicates:
-            - Path=/search
+            - Path=/search/{term}
             - Method=GET
 
         # shopping-car

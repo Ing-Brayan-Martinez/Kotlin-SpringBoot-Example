@@ -1,4 +1,6 @@
 package com.example.service_search.domain.models
 
-data class SearchProduct(
-    val term: String)
+import com.example.service_search.domain.entities.Product
+
+data class SearchResponse(
+    val products: List<Product>)

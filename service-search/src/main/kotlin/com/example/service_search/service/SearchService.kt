@@ -1,9 +1,8 @@
 package com.example.service_search.service
 
-import com.example.service_search.domain.entities.Product
-import com.example.service_search.domain.models.SearchProduct
-import reactor.core.publisher.Flux
+import com.example.service_search.domain.models.SearchResponse
+import reactor.core.publisher.Mono
 
 interface SearchService {
-    fun searchProducts(model: SearchProduct): Flux<Product>
+    fun searchProducts(term: String): Mono<SearchResponse>
 }
