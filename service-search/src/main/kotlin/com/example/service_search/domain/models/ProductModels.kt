@@ -1,4 +1,4 @@
-package com.example.service_product.domain.model
+package com.example.service_search.domain.models
 
 data class CreateProduct(
     val name: String,

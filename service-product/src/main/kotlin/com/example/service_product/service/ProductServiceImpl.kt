@@ -1,8 +1,8 @@
 package com.example.service_product.service
 
 import com.example.service_product.domain.entities.Product
-import com.example.service_product.domain.model.CreateProduct
-import com.example.service_product.domain.model.UpdateProduct
+import com.example.service_product.domain.models.CreateProduct
+import com.example.service_product.domain.models.UpdateProduct
 import com.example.service_product.mapper.ProductMapper
 import com.example.service_product.repository.ProductRepository
 import org.springframework.stereotype.Service

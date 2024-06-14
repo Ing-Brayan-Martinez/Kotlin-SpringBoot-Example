@@ -86,7 +86,19 @@ spring:
 
         # shopping-car
 
-        - id: getShoppingCar
+        - id: addToShoppingCar
+          uri: lb://service-shopping-car
+          predicates:
+            - Path=/shopping-car
+            - Method=POST
+
+        - id: deleteToShoppingCar
+          uri: lb://service-shopping-car
+          predicates:
+            - Path=/shopping-car
+            - Method=DELETE
+
+        - id: getAllToShoppingCar
           uri: lb://service-shopping-car
           predicates:
             - Path=/shopping-car
