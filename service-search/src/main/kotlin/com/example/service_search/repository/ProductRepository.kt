@@ -9,10 +9,10 @@ import reactor.core.publisher.Flux
 @Repository
 interface ProductRepository : ReactiveCrudRepository<Product, Long> {
     @Query("""
-        SELECT * FROM Product p
-            WHERE UPPER(p.name) LIKE UPPER(:term)
-            OR UPPER(p.description) LIKE UPPER(:term)
-            LIMIT 100;
+    SELECT * FROM "Product" p
+        WHERE UPPER(p.name) ILIKE UPPER(:term)     
+        OR UPPER(p.description) ILIKE UPPER(:term)
+        LIMIT 100        
     """)
     fun findProductsByTerm(term: String): Flux<Product>
 }
