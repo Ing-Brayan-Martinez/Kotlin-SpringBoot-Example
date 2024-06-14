@@ -31,11 +31,11 @@ class ProductServiceImpl(
             .flatMap { productRepository.delete(it) }
     }
 
-    override fun getProduct(id: Long): Mono<Product> {
-        return this.productRepository.findById(id)
-    }
-
     override fun getProducts(): Flux<Product> {
         return this.productRepository.findAll()
+    }
+
+    override fun getProductByID(id: Long): Mono<Product> {
+        return this.productRepository.findById(id)
     }
 }

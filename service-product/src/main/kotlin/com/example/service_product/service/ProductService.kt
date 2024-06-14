@@ -10,6 +10,6 @@ interface ProductService {
     fun createProduct(create: CreateProduct): Mono<Product>
     fun updateProduct(update: UpdateProduct): Mono<Product>
     fun deleteProduct(id: Long): Mono<Void>
-    fun getProduct(id: Long): Mono<Product>
     fun getProducts(): Flux<Product>
+    fun getProductByID(id: Long): Mono<Product>
 }

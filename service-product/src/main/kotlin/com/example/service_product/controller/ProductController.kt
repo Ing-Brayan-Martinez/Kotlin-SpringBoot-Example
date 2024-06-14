@@ -36,17 +36,17 @@ class ProductController(val productService: ProductService) {
         return this.productService.deleteProduct(id)
     }
 
-    @GetMapping("/product/{id}")
-    fun getPersonInfo(@PathVariable id: Long): Mono<Product> {
-        log.info("GET /product/${id}")
-
-        return this.productService.getProduct(id)
-    }
-
-    @GetMapping("/product/all")
-    fun getPersons(): Flux<Product> {
+    @GetMapping("/product")
+    fun getProducts(): Flux<Product> {
         log.info("GET /product")
 
         return this.productService.getProducts()
+    }
+
+    @GetMapping("/product/{id}")
+    fun getProductInfo(@PathVariable id: Long): Mono<Product> {
+        log.info("GET /product/${id}")
+
+        return this.productService.getProductByID(id)
     }
 }
