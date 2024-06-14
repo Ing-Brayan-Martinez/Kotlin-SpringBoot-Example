@@ -17,7 +17,7 @@ class ProductServiceImpl(
     override fun createProduct(create: CreateProduct): Mono<Product> {
         // Validate input
         if (create.isInvalid()) {
-            return Mono.error { Exception("Term cannot be empty or blank") }
+            return Mono.error { Exception("Invalid input data") }
         }
 
         // Execute algorithm
@@ -29,7 +29,7 @@ class ProductServiceImpl(
     override fun  updateProduct(update: UpdateProduct): Mono<Product> {
         // Validate input
         if (update.isInvalid()) {
-            return Mono.error { Exception("Term cannot be empty or blank") }
+            return Mono.error { Exception("Invalid input data") }
         }
 
         // Execute algorithm
