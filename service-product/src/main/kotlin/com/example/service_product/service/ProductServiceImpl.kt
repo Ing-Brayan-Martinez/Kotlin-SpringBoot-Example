@@ -15,27 +15,47 @@ class ProductServiceImpl(
     val productMapper: ProductMapper) : ProductService {
 
     override fun createProduct(create: CreateProduct): Mono<Product> {
+        // Validate input
+        if (create.isInvalid()) {
+            return Mono.error { Exception("Term cannot be empty or blank") }
+        }
+
+        // Execute algorithm
         return Mono.justOrEmpty(create)
             .map { productMapper.newProductEntityFromCreateProduct(it) }
             .flatMap { productRepository.save(it) }
     }
 
     override fun  updateProduct(update: UpdateProduct): Mono<Product> {
+        // Validate input
+        if (update.isInvalid()) {
+            return Mono.error { Exception("Term cannot be empty or blank") }
+        }
+
+        // Execute algorithm
         return this.productRepository.findById(update.id)
             .map { productMapper.newProductEntityFromCreateProduct(update, it) }
             .flatMap { productRepository.save(it) }
     }
 
     override fun deleteProduct(id: Long): Mono<Void>{
+        // Validate input
+        if (id <= 0) {
+            return Mono.error { Exception("Id cannot be empty or blank") }
+        }
+
+        // Execute algorithm
         return this.productRepository.findById(id)
             .flatMap { productRepository.delete(it) }
     }
 
     override fun getProducts(): Flux<Product> {
+        // Execute algorithm
         return this.productRepository.findAll()
     }
 
     override fun getProductByID(id: Long): Mono<Product> {
+        // Execute algorithm
         return this.productRepository.findById(id)
     }
 }
