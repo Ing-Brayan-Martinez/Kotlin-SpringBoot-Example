@@ -44,6 +44,70 @@ spring:
             - Path=/test
             - Method=GET
 
+        # brand
+
+        - id: createBrand
+          uri: lb://service-brand
+          predicates:
+            - Path=/brand
+            - Method=POST
+
+        - id: updateBrand
+          uri: lb://service-brand
+          predicates:
+            - Path=/brand
+            - Method=PUT
+
+        - id: deleteBrand
+          uri: lb://service-brand
+          predicates:
+            - Path=/brand/{id}
+            - Method=DELETE
+
+        - id: getBrands
+          uri: lb://service-brand
+          predicates:
+            - Path=/brand
+            - Method=GET
+
+        - id: getBrandByID
+          uri: lb://service-brand
+          predicates:
+            - Path=/brand/{id}
+            - Method=GET
+
+        # category
+
+        - id: createCategory
+          uri: lb://service-category
+          predicates:
+            - Path=/category
+            - Method=POST
+
+        - id: updateCategory
+          uri: lb://service-category
+          predicates:
+            - Path=/category
+            - Method=PUT
+
+        - id: deleteCategory
+          uri: lb://service-category
+          predicates:
+            - Path=/category/{id}
+            - Method=DELETE
+
+        - id: getCategories
+          uri: lb://service-category
+          predicates:
+            - Path=/category
+            - Method=GET
+
+        - id: getCategoryByID
+          uri: lb://service-category
+          predicates:
+            - Path=/category/{id}
+            - Method=GET
+
         # product
 
         - id: createProduct
