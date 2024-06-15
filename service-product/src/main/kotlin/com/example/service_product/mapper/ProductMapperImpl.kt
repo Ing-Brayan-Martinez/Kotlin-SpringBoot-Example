@@ -15,7 +15,9 @@ class ProductMapperImpl : ProductMapper {
             updateAt = LocalDate.now(),
             description = model.description,
             price = model.price,
-            stock = model.stock)
+            stock = model.stock,
+            brandID = model.brandID,
+            categoryID = model.categoryID)
     }
 
     override fun toProductEntity(model: UpdateProduct, entity: Product): Product {
@@ -24,6 +26,8 @@ class ProductMapperImpl : ProductMapper {
             updateAt = LocalDate.now(),
             description = model.description,
             price = model.price,
-            stock = model.stock)
+            stock = model.stock,
+            brandID = model.brandID,
+            categoryID = model.categoryID)
     }
 }

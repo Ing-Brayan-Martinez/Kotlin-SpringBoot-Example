@@ -22,15 +22,22 @@ class Product(
     @Column
     var price: Double,
     @Column
-    var stock: Int
+    var stock: Int,
+    @Column
+    var brandID: Int,
+    @Column
+    var categoryID: Int
+
 ) {
     fun copy(name: String, updateAt: LocalDate, description: String,
-             price: Double, stock: Int): Product {
+             price: Double, stock: Int, brandID: Int, categoryID: Int): Product {
         this.name = name
         this.updateAt = updateAt
         this.description = description
         this.price = price
         this.stock = stock
+        this.brandID = brandID
+        this.categoryID = categoryID
         return this
     }
 }
