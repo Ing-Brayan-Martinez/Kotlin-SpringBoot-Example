@@ -7,8 +7,6 @@ import org.springframework.stereotype.Component
 @Component
 class SearchMapperImpl : SearchMapper {
     override fun toSearchResponse(products: List<Product>): SearchResponse {
-        return SearchResponse(
-            products = products
-        )
+        TODO()
     }
 }

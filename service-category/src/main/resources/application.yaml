@@ -1,0 +1,47 @@
+server:
+  port: 9000
+
+spring:
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/e-commerce
+    username: postgres
+    password: postgres
+
+  data:
+    r2dbc:
+      repositories:
+        enabled: true
+
+  application:
+    name: service-category
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+      file-size-threshold: 0
+      location: /tmp
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+#    service-url:
+#      defaultZone: http://control-discovery:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - info
+          - health
+          - gateway
+    info:
+      enabled: true
+    health:
+      enabled: true
+    gateway:
+      enable: true

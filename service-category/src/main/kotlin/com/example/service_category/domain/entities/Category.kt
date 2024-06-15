@@ -1,4 +1,4 @@
-package com.example.service_product.domain.entities
+package com.example.service_category.domain.entities
 
 
 import org.springframework.data.annotation.Id
@@ -6,8 +6,8 @@ import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
 import java.time.LocalDate
 
-@Table("\"Product\"")
-class Product(
+@Table("\"Category\"")
+class Category(
     @Id
     @Column
     val id: Long? = null,
@@ -18,19 +18,12 @@ class Product(
     @Column
     var name: String,
     @Column
-    var description: String,
-    @Column
-    var price: Double,
-    @Column
-    var stock: Int
+    var description: String
 ) {
-    fun copy(name: String, updateAt: LocalDate, description: String,
-             price: Double, stock: Int): Product {
+    fun copy(name: String, updateAt: LocalDate, description: String): Category {
         this.name = name
-        this.updateAt = updateAt
+        this.updateAt = updateAt!!
         this.description = description
-        this.price = price
-        this.stock = stock
         return this
     }
 }
