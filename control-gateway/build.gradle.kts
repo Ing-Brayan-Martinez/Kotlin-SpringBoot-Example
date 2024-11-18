@@ -66,11 +66,11 @@ dependencyManagement {
 	}
 }
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
-}
+//java {
+//	toolchain {
+//		languageVersion = JavaLanguageVersion.of(17)
+//	}
+//}
 
 kotlin {
 	compilerOptions {
