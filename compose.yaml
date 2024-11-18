@@ -1,4 +1,4 @@
-version: "3.4"
+version: "3.9"
 
 services:
 
@@ -31,10 +31,8 @@ services:
       - "10000:10000"
     links:
       - control-discovery
-      - control-configuration
     depends_on:
       - control-discovery
-      - control-configuration
 
   service-category:
     image: example.com/service-category:latest
@@ -45,10 +43,8 @@ services:
       - "10001:10001"
     links:
       - control-discovery
-      - control-configuration
     depends_on:
       - control-discovery
-      - control-configuration
 
   service-product:
     image: example.com/service-product:latest
@@ -59,10 +55,8 @@ services:
       - "10002:10002"
     links:
       - control-discovery
-      - control-configuration
     depends_on:
       - control-discovery
-      - control-configuration
 
   service-search:
     image: example.com/service-search:latest
@@ -73,10 +67,8 @@ services:
       - "10003:10003"
     links:
       - control-discovery
-      - control-configuration
     depends_on:
       - control-discovery
-      - control-configuration
 
   service-shopping-car:
     image: example.com/service-shopping-car:latest
@@ -87,8 +79,6 @@ services:
       - "10004:10004"
     links:
       - control-discovery
-      - control-configuration
     depends_on:
       - control-discovery
-      - control-configuration
 
