@@ -1,1 +1,94 @@
+version: "3.4"
+
 services:
+
+  control-discovery:
+    image: example.com/control-discovery:latest
+    container_name: control-discovery
+    build:
+      context: ./control-discovery
+    ports:
+      - "8761:8761"
+
+  control-gateway:
+    image: example.com/control-gateway:latest
+    container_name: control-gateway
+    build:
+      context: ./control-gateway
+    ports:
+      - "80:80"
+    links:
+      - control-discovery
+    depends_on:
+      - control-discovery
+
+  service-brand:
+    image: example.com/service-brand:latest
+    container_name: service-brand
+    build:
+      context: ./service-brand
+    ports:
+      - "10000:10000"
+    links:
+      - control-discovery
+      - control-configuration
+    depends_on:
+      - control-discovery
+      - control-configuration
+
+  service-category:
+    image: example.com/service-category:latest
+    container_name: service-category
+    build:
+      context: ./service-category
+    ports:
+      - "10001:10001"
+    links:
+      - control-discovery
+      - control-configuration
+    depends_on:
+      - control-discovery
+      - control-configuration
+
+  service-product:
+    image: example.com/service-product:latest
+    container_name: service-product
+    build:
+      context: ./service-product
+    ports:
+      - "10002:10002"
+    links:
+      - control-discovery
+      - control-configuration
+    depends_on:
+      - control-discovery
+      - control-configuration
+
+  service-search:
+    image: example.com/service-search:latest
+    container_name: service-search
+    build:
+      context: ./service-search
+    ports:
+      - "10003:10003"
+    links:
+      - control-discovery
+      - control-configuration
+    depends_on:
+      - control-discovery
+      - control-configuration
+
+  service-shopping-car:
+    image: example.com/service-shopping-car:latest
+    container_name: service-shopping-car
+    build:
+      context: ./service-shopping-car
+    ports:
+      - "10004:10004"
+    links:
+      - control-discovery
+      - control-configuration
+    depends_on:
+      - control-discovery
+      - control-configuration
+
