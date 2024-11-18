@@ -41,16 +41,14 @@ dependencyManagement {
 	}
 }
 
-//java {
-//	toolchain {
-//		languageVersion = JavaLanguageVersion.of(17)
-//	}
-//}
-
 kotlin {
 	compilerOptions {
 		freeCompilerArgs.addAll("-Xjsr305=strict")
 	}
+}
+
+tasks.withType<Jar> {
+    archiveFileName.set("control-discovery.jar")
 }
 
 tasks.withType<Test> {
