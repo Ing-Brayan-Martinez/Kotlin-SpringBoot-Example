@@ -47,9 +47,9 @@ kotlin {
 	}
 }
 
-tasks.withType<Jar> {
-    archiveFileName.set("control-discovery.jar")
-}
+//tasks.withType<Jar> {
+//    archiveFileName.set("control-discovery.jar")
+//}
 
 tasks.withType<Test> {
 	useJUnitPlatform()

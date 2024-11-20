@@ -7,7 +7,7 @@ EXPOSE 8761:8761
 
 WORKDIR $WORKDIR_BASE
 
-COPY ./build/libs/control-discovery.jar control-discovery.jar
+COPY ./build/libs/control-discovery-0.0.1-SNAPSHOT.jar control-discovery.jar
 
 ENTRYPOINT java -jar control-discovery.jar
 
